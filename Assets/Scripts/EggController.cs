@@ -12,10 +12,4 @@ public class EggController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Obstacle(Clone)")
-            GetComponent<EggMove>().enabled = false;
-    }
 }

@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 8827572215289652204}
   - component: {fileID: 8827572215289652207}
   - component: {fileID: 8827572215289652206}
-  - component: {fileID: 1155556676820056421}
   - component: {fileID: 745906087439055572}
-  - component: {fileID: -6701284607148875172}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -31,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8827572215289652203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -61,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -131,20 +131,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1155556676820056421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8827572215289652203}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57662636f27e26419fe306ffa6c5e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  gravity: 0
 --- !u!114 &745906087439055572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,16 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   underBound: 5
---- !u!114 &-6701284607148875172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8827572215289652203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e72ccf30d38907498319f8468b1f10d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 0

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8827572215289652205}
   - component: {fileID: 8827572215289652204}
   - component: {fileID: 8827572215289652206}
-  - component: {fileID: 8332994038542850270}
   - component: {fileID: 4621083451044404862}
   - component: {fileID: 602937933}
   m_Layer: 0
@@ -93,33 +92,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8827572215289652203}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 44c298f302b64f346a92da465839bf31, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8332994038542850270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8827572215289652203}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57662636f27e26419fe306ffa6c5e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  gravity: 0
 --- !u!114 &4621083451044404862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6784d6d620e10e449a943156fd628b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   prefab: {fileID: 8827572215289652203, guid: 339ed8331f1f3eb4cbd37af00fdc1a69, type: 3}
-  jumpForce: 5
-  maxEggs: 5000
+  jumpForce: 1
+  maxEggs: 10
 --- !u!70 &602937933
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

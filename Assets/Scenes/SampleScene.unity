@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 618040962}
   - component: {fileID: 618040963}
   - component: {fileID: 618040964}
+  - component: {fileID: 618040965}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -371,6 +372,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &618040965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618040961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a38d12a1307885449704d94a598f5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &903208635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4358388169507239413, guid: 1a0f4b0ab1571b34286c34840349d7a1,
@@ -540,19 +553,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4621083451044404862, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
         type: 3}
-      propertyPath: jumpForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621083451044404862, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
-        type: 3}
-      propertyPath: maxEggs
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332994038542850270, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 618040965}
     - target: {fileID: 8827572215289652203, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
         type: 3}
       propertyPath: m_Name
@@ -611,16 +614,6 @@ PrefabInstance:
     - target: {fileID: 8827572215289652205, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827572215289652206, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827572215289652206, guid: 3e3c8a99dcb9eb44d8f29cc1ec66f790,
-        type: 3}
-      propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
