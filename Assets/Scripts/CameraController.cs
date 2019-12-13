@@ -2,18 +2,15 @@
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField]
     private Transform target;
-
-    private Vector3 offset;
 
     private void Start()
     {
-        offset = new Vector3(0, 0, transform.position.z);
+        target = GameObject.Find("Frogsterr").transform;
     }
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
     }
 }
