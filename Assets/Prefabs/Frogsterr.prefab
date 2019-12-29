@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5030683771479301566}
   - component: {fileID: 428394841220114847}
   - component: {fileID: 1362506219}
-  - component: {fileID: 1910184958347354013}
   m_Layer: 0
   m_Name: Frogsterr
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9182875915667513387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a95de383cdfb28f409e33b853eaa0fb8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a15147fbf24bd94ea3a82d37d26dcab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +100,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -120,7 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
-  prefab: {fileID: 8827572215289652203, guid: 339ed8331f1f3eb4cbd37af00fdc1a69, type: 3}
+  eggPrefab: {fileID: 8827572215289652203, guid: 339ed8331f1f3eb4cbd37af00fdc1a69,
+    type: 3}
+  underBound: -9
+  force: 150
 --- !u!61 &428394841220114847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -128,7 +130,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9182875915667513387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -138,14 +140,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.81, y: 8.81}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8, y: 7.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!68 &1362506219
 EdgeCollider2D:
@@ -163,21 +165,5 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 4, y: 3.5}
-  - {x: 4, y: -3}
---- !u!58 &1910184958347354013
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182875915667513387}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 4
+  - {x: 0.6, y: -0.4}
+  - {x: 0.6, y: 0.4}

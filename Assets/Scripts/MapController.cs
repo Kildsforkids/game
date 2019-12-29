@@ -3,46 +3,46 @@
 public class MapController : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
+    private GameObject blockPrefab, boundPrefab;
     [SerializeField]
-    private Transform[] blocks;
+    private float lowerBound, upperBound, offsetX;
     [SerializeField]
-    private GameObject blockPrefab;
+    private int length;
     [SerializeField]
-    private float timerValue;
-    [SerializeField]
-    private float chance;
+    private float timerValue, chance;
 
+    private Transform target;
     private float timer;
 
     private void Start()
     {
+        target = GameObject.Find("Frogsterr").transform;
+        CreateBounds(boundPrefab, length);
         timer = timerValue;
     }
 
     private void Update()
     {
-        //if (target.position.x > blocks[1].position.x)
-        //{
-        //    Transform tmp = blocks[0];
-        //    tmp.position = blocks[2].position + Vector3.right * 0.7f;
-        //    blocks[0] = blocks[1];
-        //    blocks[1] = blocks[2];
-        //    blocks[2] = tmp;
-        //    if (Random.Range(0f, 1f) > 0.7)
-        //        Instantiate(blockPrefab, new Vector2(target.position.x + 5f, target.position.y + Random.Range(-1, 1)), Quaternion.identity, transform);
-        //}
+        //SpawnObstacle(blockPrefab);
+    }
+
+    private void CreateBounds(GameObject bound, int length)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            Instantiate(bound, new Vector2(i + offsetX, upperBound), Quaternion.identity, transform);
+            Instantiate(bound, new Vector2(i + offsetX, lowerBound), Quaternion.identity, transform);
+        }
+    }
+
+    private void SpawnObstacle(GameObject obstacle)
+    {
         timer -= Time.deltaTime;
         if (timer < 0f)
         {
-            //if (Random.Range(0f, 1f) < 0.5f)
-            //{
-            //    GameObject obj = Instantiate(blockPrefab, new Vector2(target.position.x + 5f, Random.Range(0f, 4f)), Quaternion.identity, transform);
-            //    obj.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0.5f, 1f));
-            //}
             if (Random.Range(0f, 1f) < chance)
             {
-                GameObject obj = Instantiate(blockPrefab, new Vector2(target.position.x + 5f, target.position.y), Quaternion.identity, transform);
+                GameObject obj = Instantiate(obstacle, new Vector2(target.position.x + 7f, target.position.y), Quaternion.identity, transform);
                 obj.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0.5f, 1f));
                 if (Random.Range(0f, 1f) < 0.3f && chance < 1f)
                 {
