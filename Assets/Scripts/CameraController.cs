@@ -2,6 +2,9 @@
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField]
+    private float offset;
+
     private Transform target;
 
     private void Start()
@@ -11,6 +14,6 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
+        transform.position = new Vector3(target.position.x + offset, transform.position.y, transform.position.z);
     }
 }
