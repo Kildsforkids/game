@@ -12321,6 +12321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  boost: 0.1
 --- !u!1001 &618800898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31094,6 +31095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  boost: 0
 --- !u!1001 &1733722478
 PrefabInstance:
   m_ObjectHideFlags: 0
