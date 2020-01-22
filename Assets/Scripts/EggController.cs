@@ -5,21 +5,24 @@ public class EggController : MonoBehaviour
     [SerializeField]
     private float underBound;
     [SerializeField]
-    private float lifeTime;
-    [SerializeField]
     private GameObject particle;
 
-    private float timer;
+    private Transform player;
+
+    private bool isStopped = false;
 
     private void Start()
     {
-        timer = lifeTime;
+        player = GameObject.Find("Frogsterr").transform;
     }
 
     private void Update()
     {
-        //timer -= Time.deltaTime;
-        if (transform.position.y < underBound || timer < 0f)
+        if (!isStopped)
+        {
+            transform.position = new Vector3(player.position.x, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y < underBound)
         {
             Destroy(gameObject);
         }
@@ -38,9 +41,13 @@ public class EggController : MonoBehaviour
         var collider = collision.collider;
         if (collider.GetComponent<BlockController>() != null)
         {
+            if (GetComponent<EdgeCollider2D>().IsTouching(collider))
+            {
+                isStopped = true;
+            }
             if (collider.GetComponent<BlockController>().GetBlockTypeString() == "Spike")
             {
-                Instantiate(particle, transform.position, Quaternion.identity, null);
+                Instantiate(particle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
