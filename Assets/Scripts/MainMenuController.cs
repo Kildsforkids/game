@@ -17,6 +17,10 @@ public class MainMenuController : MonoBehaviour
 
     public void StoryMode() {
         SceneManager.LoadScene("SampleScene");
-    }    
+    }
+
+    public void Exit() {
+        Application.Quit();
+    }
 
 }
