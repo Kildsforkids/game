@@ -62,7 +62,7 @@ public class FrogController : MonoBehaviour
             else
             {
                 if (!isPaused)
-                    SceneManager.LoadScene(0);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 else
                     SetPause();
             }
@@ -93,7 +93,7 @@ public class FrogController : MonoBehaviour
                 else
                 {
                     if (!isPaused)
-                        SceneManager.LoadScene(0);
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     else
                         SetPause();
                 }
@@ -137,7 +137,7 @@ public class FrogController : MonoBehaviour
                 else
                 {
                     if (!isPaused)
-                        SceneManager.LoadScene(0);
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                     else
                         SetPause();
                 }
@@ -172,7 +172,7 @@ public class FrogController : MonoBehaviour
                     else
                     {
                         if (!isPaused)
-                            SceneManager.LoadScene(0);
+                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                         else
                             SetPause();
                     }
@@ -201,16 +201,16 @@ public class FrogController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var collider = collision.collider;
-        if (collider.GetComponent<BlockController>() != null)
+        if (GetComponent<EdgeCollider2D>().IsTouching(collider))
+        {
+            SetGameOver(true);
+        }
+        else if (collider.GetComponent<BlockController>() != null)
         {
             if (collider.GetComponent<BlockController>().GetBlockTypeString() == "Spike")
             {
                 SetGameOver();
             }
-        }
-        if (GetComponent<EdgeCollider2D>().IsTouching(collider))
-        {
-            SetGameOver(true);
         }
     }
 
@@ -220,10 +220,16 @@ public class FrogController : MonoBehaviour
         isPaused = !isPaused;
     }
 
+    public Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+
     private void SetWin()
     {
         gameController.Stop(true);
         isGameOver = true;
+        GetComponent<Move>().enabled = false;
     }
 
     private void SetGameOver(bool useForce = false)
@@ -233,6 +239,7 @@ public class FrogController : MonoBehaviour
         if (useForce)
             rb.AddForce(Vector2.left * force);
         isGameOver = true;
+        GetComponent<Move>().enabled = false;
 #if !UNITY_EDITOR
         //Handheld.Vibrate();
 #endif

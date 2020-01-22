@@ -11,10 +11,10 @@ public class BlockController : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.x < leftBound)
-        {
-            Destroy(gameObject);
-        }
+        //if (transform.position.x < leftBound)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 
     public string GetBlockTypeString()

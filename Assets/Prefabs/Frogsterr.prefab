@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 9182875915667513388}
   - component: {fileID: 9182875915667513390}
   - component: {fileID: 5030683771479301566}
-  - component: {fileID: 428394841220114847}
   - component: {fileID: 1362506219}
+  - component: {fileID: 1662629765}
+  - component: {fileID: 1662629766}
   m_Layer: 0
   m_Name: Frogsterr
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9a15147fbf24bd94ea3a82d37d26dcab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb300d31bf8f03e4c9e1733df487554b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +101,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -121,34 +122,10 @@ MonoBehaviour:
   gameController: {fileID: 0}
   eggPrefab: {fileID: 8827572215289652203, guid: 339ed8331f1f3eb4cbd37af00fdc1a69,
     type: 3}
+  dedSprite: {fileID: 21300000, guid: 2e3a3c22d01b3744aa2940ac7cf9d2ce, type: 3}
   underBound: -9
   force: 150
---- !u!61 &428394841220114847
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9182875915667513387}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  actionTimer: 0.25
 --- !u!68 &1362506219
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +144,33 @@ EdgeCollider2D:
   m_Points:
   - {x: 0.6, y: -0.4}
   - {x: 0.6, y: 0.4}
+--- !u!58 &1662629765
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182875915667513387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
+--- !u!114 &1662629766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182875915667513387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e83f64b83f41f94a991daff7b9acf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  boost: 0.2
